@@ -87,10 +87,12 @@ The user should be able to see the list of tasks, add new ones, delete existing 
                 - Use the document.createElement to create the new List Item
                 - Append the LI child to the UL
             */
-           function addNewTask(){ 
-            let li = document.createElement('li')
+            let ulNode =  document.getElementById('myTaskList')
+           
+            function addNewTask(){ 
+             let li = document.createElement('li')
             li.innerText =  document.getElementById('newTask').value
-            document.getElementById('myTaskList').appendChild(li)
+            ulNode.appendChild(li)
             
            }
            
@@ -99,16 +101,14 @@ The user should be able to see the list of tasks, add new ones, delete existing 
                 Create a method "removeLast" which removes the last item from the task list
             */
            function removeLast(){
-            let list1 = document.getElementById('myTaskList')
-            list1.removeChild(list1.lastElementChild);
+            ulNode.removeChild(ulNode.lastElementChild);
            }
 
       /* EXERCISE 7: 
                 Create a method "removeFirst" which removes the first item from the task list
             */
             function removeFirst(){
-            let list1 = document.getElementById('myTaskList')
-            list1.removeChild(list1.firstElementChild);
+                ulNode.removeChild(ulNode.firstElementChild);
            }
 
       /* EXERCISE 8: 
@@ -134,7 +134,7 @@ The user should be able to see the list of tasks, add new ones, delete existing 
             let colorPicker1 = document.getElementById('colorPicker')
             colorPicker1.addEventListener('change', function(){
                 for(let i = 0; i < color.length; i++){
-                color[i].style.backgroundColor = colorPicker.value
+                color[i].style.backgroundColor = colorPicker1.value
                 }
             })
             }
